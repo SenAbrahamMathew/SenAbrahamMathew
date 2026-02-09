@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sen Abraham Mathew</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  /* Tabs container */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+  }
+
+  /* Individual tab button */
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #eee;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .tab:hover {
+    background: #ddd;
+  }
+
+  .tab.active {
+    background: #333;
+    color: white;
+  }
+
+  /* Tab content */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* About Me text in black */
+  #about p {
+    color: black;
+  }
+</style>
+</head>
+<body>
+
+<h1>Hi there 👋</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab('about')">About Me</div>
+  <div class="tab" onclick="showTab('journey')">My Journey</div>
+  <div class="tab" onclick="showTab('education')">Education & Certifications</div>
+</div>
+
+<!-- Tab Content -->
+<div id="about" class="tab-content active">
+  <p>Hi! I'm Sen Abraham Mathew. I am passionate about technology and love building projects.  
+     I enjoy learning new skills, automating tasks, and collaborating with others in the tech community.</p>
+  <ul>
+    <li>🔭 Currently working on: [Your project]</li>
+    <li>🌱 Learning: [What you're learning]</li>
+    <li>💬 Ask me about: [Topics]</li>
+    <li>⚡ Fun fact: [Something interesting]</li>
+  </ul>
+</div>
+
+<div id="journey" class="tab-content">
+  <p>I started my journey in [Year/Field] and over time have worked on projects involving [Technologies/Skills].</p>
+  <ul>
+    <li>Milestone 1: [Description]</li>
+    <li>Milestone 2: [Description]</li>
+    <li>Milestone 3: [Description]</li>
+  </ul>
+</div>
+
+<div id="education" class="tab-content">
+  <p>**Education:**</p>
+  <ul>
+    <li>[Degree, Institution, Year]</li>
+    <li>[Any other academic info]</li>
+  </ul>
+  <p>**Certifications:**</p>
+  <ul>
+    <li>[Certification Name, Platform/Year]</li>
+    <li>[Another Certification]</li>
+  </ul>
+</div>
+
+<script>
+function showTab(tabId) {
+  // Hide all content
+  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  // Remove active class from all tabs
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  // Show selected content
+  document.getElementById(tabId).classList.add('active');
+  // Highlight selected tab
+  document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+}
+</script>
+
+</body>
+</html>
